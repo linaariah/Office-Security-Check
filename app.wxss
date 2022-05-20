@@ -1,0 +1,15 @@
+.image1{
+  display: flex;
+  justify-content: center;
+  }
+
+
+.image2{
+  width: 750rpx;
+  height: 400rpx;
+}    
+.biaoyu{
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+ }

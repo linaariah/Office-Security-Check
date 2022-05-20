@@ -1,0 +1,43 @@
+<view class="image1">
+<image src="/images/1.jpg" mode="widthFix" ></image>
+</view>
+<view><image src="/images/ducha.jpg" class="ducha" mode="widthFix"></image></view>
+<image src="/images/2.jpg" class="image2"></image>
+ 
+<view class="zhanghao">请输入用户注册账号：</view>
+
+<view class='parentstyle '>
+<input class="input" bindinput="getAccount" placeholder="楼幢(JX/JS/GZ)+门牌号，如JXC303"></input>
+</view>
+
+ <view class="zhanghao">请输入用户注册密码：</view>
+ <view class='parentstyle '>
+ <view class='centerStyle'>
+<input class="input" bindinput="getPassword"  password='{{passwordType}}' placeholder="密码至少4位"></input>
+<image src='{{defaultType? "/images/close.png": "/images/open.png"}}' class='imageStyle' bindtap='eyeStatus'></image>
+ </view>
+ </view>
+
+ <!-- 选择身份 -->
+ <view class="zhanghao">请选择账号身份：</view>
+ <view class="allsf">
+ <radio-group bindchange="getsf">
+ <radio class="sf1" value="room" color=" #987938" checked="true">办公室</radio>
+ <radio class="sf2" value="tutor" color=" #987938" disabled="true">导师</radio>
+ <radio class="sf3" value="inspector" color=" #987938" disabled="true">检查员</radio>
+ </radio-group>
+</view>
+
+<button class="tongyi"  bindtap="register" 	hover-class="anxia">注册</button>
+
+
+
+
+<text class="biaoyu">安全通道要畅通，不要堵塞或占据。
+疏散标识要醒目，不要遮挡或移弃。
+消防栓箱要完好，不要损毁或丢弃。
+防火门窗要紧闭，不要随意地开启。
+用火用电要小心，不要麻痹或大意。
+发现隐患要上报，不要忽视或包庇。
+火灾报警要及时，不要拖延或犹豫。
+逃生方法要正确，不要盲目进烟区。</text>

@@ -1,0 +1,28 @@
+<view class="image1">
+<image src="/images/1.jpg" mode="widthFix" ></image>
+</view>
+<view><image src="/images/ducha.jpg" class="ducha" mode="widthFix"></image></view>
+<image src="/images/2.jpg" class="image2"></image>
+ 
+<view class="zhanghao">账号：</view>
+
+<view class='parentstyle '>
+<input class="input" bindinput="getAccount" placeholder="请输入需要修改密码的账号"></input>
+</view>
+
+ 
+
+
+<button class="tongyi"  bindtap="queren" >确认账号</button>
+
+
+
+
+<text class="biaoyu">安全通道要畅通，不要堵塞或占据。
+疏散标识要醒目，不要遮挡或移弃。
+消防栓箱要完好，不要损毁或丢弃。
+防火门窗要紧闭，不要随意地开启。
+用火用电要小心，不要麻痹或大意。
+发现隐患要上报，不要忽视或包庇。
+火灾报警要及时，不要拖延或犹豫。
+逃生方法要正确，不要盲目进烟区。</text>

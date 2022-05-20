@@ -1,0 +1,12 @@
+<!--pages/detail/index.wxml-->
+<view>
+<text class="text1">规则:</text>
+<view > 
+  <textarea maxlength="-1" class="a" model:value="{{guize}}"></textarea>
+</view>
+<text class='text1'>扣分值:</text>
+<input class="shuru" maxlength="-1" model:value="{{score}}" />
+<text class='text1'>备注:</text>
+<textarea class='a' model:value="{{beizhu}}"></textarea>
+<button class="anniu" plain="true" type="default" size="mini" bind:tap="set" >确认修改</button>
+</view>

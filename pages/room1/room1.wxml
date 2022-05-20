@@ -1,0 +1,250 @@
+<!--pages/room1/room1.wxml-->
+<view class="divline"></view>
+<view class="style">
+
+
+   <view class="s1">
+      <view class="s2">{{name1}}</view>
+      <button class="button1" bindtap="login1">注销</button>
+   </view>
+   <view class="divline1"></view>
+
+   <input class="text" placeholder="搜索房间号(如JXC303)或时间(如2021/11/28)" bindinput='query1'></input>
+
+   <view class="area1">
+
+      <scroll-view scroll-y="{{true}}" style="height:200vh" bindscrolltolower='scrollBottom'>
+         <view class="word-line" wx:for="{{hot_words}}" wx:for-index="idx" wx:for-item="itemName" style='{{idx == hot_words.length-1 ? "" : "border-bottom : 4rpx solid #987938;"}}'>
+            <view class="jiance" >
+               <view class="word-content">
+                  <view class="word-hot" style="color: blue;">{{itemName.time}}</view>
+                  <view class="word-hot" style="color: blue;">{{itemName.room}}</view>
+               </view>
+
+               <view class="jtwt" style='{{itemName.k11+itemName.k12+itemName.k13+itemName.k14+itemName.k15+itemName.k16+itemName.k21+itemName.k22+itemName.k23+itemName.k24+itemName.k31+itemName.k32+itemName.k33+itemName.k41+itemName.k42 == 30 ? "display:none": "display:true" }}'>
+                  <view class="zhj">
+                     <view class="bt1">问题和图片</view>
+                     <button class="button2" style='font-size: 30rpx;display: flex;align-items: center;justify-content: center;' bindtap="shanc" data-id="{{itemName._id}}" data-room="{{itemName.room}}"  data-sum="{{itemName.sum}}">删除</button>
+                  </view>
+
+                  <view class="bt2">
+                     <view class="word-hot2">
+                        <textarea class="text11" value="{{itemName.pro}}" maxlength="-1" disabled="flase" style='{{itemName.pro == "" ? "display:none": "display:true" }}'></textarea>
+                     </view>
+                  </view>
+                  <view class="tup">
+                     <view wx:for="{{itemName.fileIDs}}" wx:key="index" class="pict1">
+                        <image class="c" bindtap="preview" src="{{item}}" data-src="{{item}}" data-id="{{itemName._id}}"></image>
+                     </view>
+                  </view>
+                  <view class="zuida">
+                     <view class="xiangmu">
+                        <view class="yi">
+                           <text class="yi1">环境秩序</text>
+                        </view>
+                        <view class="er">
+                           <view class="san11">
+                              <view class="er1" style="font-size: medium;font-weight: 800;display: flex;justify-content: center;">扣分依据</view>
+                              <view class="picker" style="font-size: medium;font-weight: 800;">
+                                 备注
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（1）办公室门窗、地面、桌面卫生差。（分值：2分）</view>
+                              <view class="picker" style='{{itemName.k11 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k11]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（2）办公室内废弃的物品（如纸板箱、报废设备、破旧家具桌椅等）未及时处理或清理的现象。（分值：2分）</view>
+                              <view class="picker" style='{{itemName.k12 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k12]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（3）办公室内堆放或存放与实验无关的私人物品。（分值：2分）</view>
+                              <view class="picker" style='{{itemName.k13 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k13]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（4）办公室内有抽烟、烧煮食物、使用可燃性蚊香等现象。（分值：3分）</view>
+                              <view class="picker" style='{{itemName.k14 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k14]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（5）办公室物品不分类放置，台面摆放杂乱，仪器设备、材料、工具等摆放零乱。（分值：3分）</view>
+                              <view class="picker" style='{{itemName.k15 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k15]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（6）研究生办公室出现任何化学试剂、易燃易爆品。（分值；12分）</view>
+                              <view class="picker" style='{{itemName.k16 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k16]}}
+                              </view>
+
+                           </view>
+
+
+                        </view>
+                     </view>
+                     <!-- 第二部分 -->
+                     <view class="xiangmu">
+                        <view class="yi">
+                           <text class="yi1">消防安全</text>
+                        </view>
+                        <view class="er">
+                           <view class="san11">
+                              <view class="er1" style="font-size: medium;font-weight: 800;display: flex;justify-content: center;">扣分依据</view>
+                              <view class="picker" style="font-size: medium;font-weight: 800;">
+                                 备注
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（1）灭火器存在过期、压力不足、外观损坏锈蚀、被遮挡等现象，未及时检查记录并更换。（分值：3分）</view>
+                              <view class="picker" style='{{itemName.k21 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k21]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（2）办公室内消防器材（包括灭火器、灭火毯、急救药箱、消防锤、消防自救呼吸器等）未按要求数量配置或类型配置不正确、位置设置不合适。（分值：6分）</view>
+                              <view class="picker" style='{{itemName.k22 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k22]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（3）消防疏散通道、安全出口堆放仪器、杂物、停放电动车、自行车、手推车等影响畅通，门窗上设置影响逃生和灭火救援的障碍物。（分值：6分）</view>
+                              <view class="picker" style='{{itemName.k23 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k23]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（4）办公室内未经允许（报备）使用明火电炉以及使用大功率取暖电器现象。（分值：12分）</view>
+                              <view class="picker" style='{{itemName.k24 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k24]}}
+                              </view>
+
+                           </view>
+
+                        </view>
+
+                     </view>
+                     <!-- 第三部分 -->
+                     <view class="xiangmu">
+                        <view class="yi">
+                           <text class="yi1">水电安全</text>
+                        </view>
+                        <view class="er">
+                           <view class="san11">
+                              <view class="er1" style="font-size: medium;font-weight: 800;display: flex;justify-content: center;">扣分依据</view>
+                              <view class="picker" style="font-size: medium;font-weight: 800;">
+                                 备注
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（1）存在水槽损坏、下水道堵塞现象；使用水龙头、水管、皮管（特别是冷凝冷却系统的橡胶管接口处）存在破损、老化现象；存在自来水开着无人在岗现象。（分值：3分）</view>
+                              <view class="picker" style='{{itemName.k31 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k31]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（2）电线老化、插头破损、插头插座不匹配或多个接线板串联及接线板未固定直接放在地面的现象、充电线未连接时电源线仍接在电源上。（分值：8分）</view>
+                              <view class="picker" style='{{itemName.k32 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k32]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（3）私拉电线、私自改装电源线路。（分值：12分）</view>
+                              <view class="picker" style='{{itemName.k33 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k33]}}
+                              </view>
+
+                           </view>
+
+
+                        </view>
+
+                     </view>
+                     <!-- 第四部分 -->
+                     <view class="xiangmu">
+                        <view class="yi">
+                           <text class="yi1">冰箱管理</text>
+                        </view>
+                        <view class="er">
+                           <view class="san11">
+                              <view class="er1" style="font-size: medium;font-weight: 800;display: flex;justify-content: center;">扣分依据</view>
+                              <view class="picker" style="font-size: medium;font-weight: 800;">
+                                 备注
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（1）冰箱内存放的物品无明确标识（包括品名、使用人、日期等）。（分值：3分）</view>
+                              <view class="picker" style='{{itemName.k41 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k41]}}
+                              </view>
+
+                           </view>
+                           <view class="san11">
+                              <view class="er1">（2）使用普通冰箱贮存危险化学品（易燃易爆品等）。（分值：12分）</view>
+                              <view class="picker" style='{{itemName.k42 == 2 ? "color : black":"color : red"}}'>
+                                 {{array1[itemName.k42]}}
+                              </view>
+
+                           </view>
+
+
+
+                        </view>
+                     </view>
+                  </view>
+                  <view class="sum">
+                     <text class="kf">扣分合计</text>
+                     <text class="num">{{itemName.sum}}</text>
+                  </view>
+                  <view class="zhj">
+                     <view class="bt1">整改情况</view>
+
+                  </view>
+
+                  <view class="bt2">
+                     <view class="word-hot2">
+                        <textarea class="text11" value="{{itemName.pro1}}" maxlength="-1" disabled="flase" style='{{itemName.pro1 == "" ? "display:none": "display:true" }}'></textarea>
+                     </view>
+                  </view>
+                  <view class="tup">
+                     <view wx:for="{{itemName.fileIDs1}}" wx:key="index" class="pict1">
+                        <image class="c" bindtap="preview1" src="{{item}}" data-src="{{item}}" data-id="{{itemName._id}}"></image>
+                     </view>
+                  </view>
+
+               </view>
+               <view class="zhj1" style='{{itemName.k11+itemName.k12+itemName.k13+itemName.k14+itemName.k15+itemName.k16+itemName.k21+itemName.k22+itemName.k23+itemName.k24+itemName.k31+itemName.k32+itemName.k33+itemName.k41+itemName.k42 < 30 ? "display:none": "display:true" }}'>
+                     <view class="bt1">无违规</view>
+                     <button class="button2" style='font-size: 30rpx;display: flex;align-items: center;justify-content: center;' bindtap="shanc" data-id="{{itemName._id}}">删除</button>
+                  </view>
+            </view>
+
+         </view>
+      </scroll-view>
+
+
+   </view>
+
+
+</view>

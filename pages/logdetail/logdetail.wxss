@@ -1,0 +1,20 @@
+.a{
+  box-shadow: 0 0 3px #000;
+  margin: 30rpx;
+  height: 250rpx;
+  width:90%;
+}
+.text1{
+  margin: 20rpx;
+  padding: 20rpx;
+  font-size: 20px;
+}
+.shuru{
+  box-shadow: 0 0 3px #000;
+  margin:30rpx;
+  width: 90%;
+}
+.anniu{
+  margin-top: 50rpx;
+ margin-left: 40%;
+}

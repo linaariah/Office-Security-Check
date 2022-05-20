@@ -1,0 +1,244 @@
+<!-- 第一个区域：检查员 -->
+<view class="jianchayuan">
+  <text>检查员：</text>
+  <text >{{name1}}</text>
+</view>
+
+<!-- 第二个区域：房间 -->
+<view class='room'>
+  <text>房间：</text>
+  <input type='text' placeholder='请输入房间号如：JXC303' model:value="{{getroom}}" bindinput="roomname"></input>
+</view>
+
+<!-- 第四个区域：具体问题 -->
+<view class="">
+  <text class="wenti">问题：</text>
+   <textarea class="detailText" 
+    placeholder="请输入具体违规人员、位置及问题"
+    model:value="{{details}}">
+  </textarea>
+</view>
+
+<!-- 第五个区域：照片 -->
+<view class="title">
+  <text>照片：</text>
+</view>
+
+<view class="item3">
+    <view class='img-box' bindtap='c' wx:if="{{imgbox.length<9}}">
+        <image class='img' src='../../images/tu4.png'></image> 
+    </view> 
+
+    <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='img-box'>
+                <image class='img' src='{{item}}'></image>
+                <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete'>
+                    <image class='img1' src='../../images/tu3.png'></image>  
+                </view>
+        </view>
+    </block> 
+</view>
+
+<!-- 第三个区域：违规条例 -->
+<view class="wenti">
+  <text>违规条例：</text>
+  <!-- <picker bindchange="bindPickerChange" value="{{ind}}" range="{{array1}}">
+  <view class="picker"> -->
+  <!-- {{array1[ind]}}
+  </view>
+  </picker> -->
+</view>
+
+<view class="zuida">
+   <view class="xiangmu">
+      <view class="yi">
+      <text class="yi1">环境秩序</text>
+      </view>
+         <view class="er">
+            <view class="tou">
+            <text class="er11">扣分依据</text>
+            
+            </view>
+            <view class="er1">（1）办公室门窗、地面、桌面卫生差。（2分）</view>
+            <view class="er1">（2）办公室内废弃的物品（如纸板箱、报废设备、破旧家具桌椅等）未及时处理或清理的现象。（2分）</view>
+            <view class="er1">（3）办公室内堆放或存放与实验无关的私人物品。（2分）</view>
+            <view class="er1">（4）办公室内有抽烟、烧煮食物、使用可燃性蚊香等现象。（3分）</view>
+            <view class="er1">（5）办公室物品不分类放置，台面摆放杂乱，仪器设备、材料、工具等摆放零乱。（3分）</view>
+            <view class="er1">（6）研究生办公室出现任何化学试剂、易燃易爆品。（12分）</view>
+         </view>
+               <view class="san">
+                  <text class="er12">备注</text>
+                  <view class="san11">
+                     <picker bindchange="bindPickerChange11" value="{{index11}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index11]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san12">
+                     <picker bindchange="bindPickerChange12" value="{{index12}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index12]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san13">
+                     <picker bindchange="bindPickerChange13" value="{{index13}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index13]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san14">
+                     <picker bindchange="bindPickerChange14" value="{{index14}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index14]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san15">
+                     <picker bindchange="bindPickerChange15" value="{{index15}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index15]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san16">
+                     <picker bindchange="bindPickerChange16" value="{{index16}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index16]}}
+                     </view>
+                     </picker>
+                  </view>
+               </view>
+   </view>
+<!-- 第二部分 -->
+   <view class="xiangmu">
+      <view class="yi">
+      <text class="yi1">消防安全</text>
+      </view>
+         <view class="er">
+            <view class="tou">
+            <text class="er11">扣分依据</text>       
+            </view>
+            <view class="er1">（1）灭火器存在过期、压力不足、外观损坏锈蚀、被遮挡等现象，未及时检查记录并更换。（3分）</view>
+            <view class="er1">（2）办公室内消防器材（包括灭火器、灭火毯、急救药箱、消防锤、消防自救呼吸器等）未按要求数量配置或类型配置不正确、位置设置不合适。（6分）</view>
+            <view class="er1">（3）消防疏散通道、安全出口堆放仪器、杂物、停放电动车、自行车、手推车等影响畅通，门窗上设置影响逃生和灭火救援的障碍物。（6分）</view>
+            <view class="er1">（4）办公室内未经允许（报备）使用明火电炉以及使用大功率取暖电器现象。（12分）</view>
+         </view>
+               <view class="san">
+                  <text class="er12">备注</text>
+                  <view class="san21">
+                     <picker bindchange="bindPickerChange21" value="{{index21}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index21]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san22">
+                     <picker bindchange="bindPickerChange22" value="{{index22}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index22]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san23">
+                     <picker bindchange="bindPickerChange23" value="{{index23}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index23]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san24">
+                     <picker bindchange="bindPickerChange24" value="{{index24}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index24]}}
+                     </view>
+                     </picker>
+                  </view>
+               </view>
+   </view>
+<!-- 第三部分 -->
+   <view class="xiangmu">
+      <view class="yi">
+      <text class="yi1">水电安全</text>
+      </view>
+         <view class="er">
+            <view class="tou">
+            <text class="er11">扣分依据</text>
+         </view>
+         <view class="er1">（1）存在水槽损坏、下水道堵塞现象；使用水龙头、水管、皮管（特别是冷凝冷却系统的橡胶管接口处）存在破损、老化现象；存在自来水开着无人在岗现象。（3分）</view>
+            <view class="er1">（2）电线老化、插头破损、插头插座不匹配或多个接线板串联及接线板未固定直接放在地面的现象、充电线未连接时电源线仍接在电源上。（8分）</view>
+            <view class="er1">（3）私拉电线、私自改装电源线路。（12分）</view>
+         </view>
+         <view class="san">
+                  <text class="er12">备注</text>
+                  <view class="san31">
+                     <picker bindchange="bindPickerChange31" value="{{index31}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index31]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san32">
+                     <picker bindchange="bindPickerChange32" value="{{index32}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index32]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san33">
+                     <picker bindchange="bindPickerChange33" value="{{index33}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index33]}}
+                     </view>
+                     </picker>
+                  </view>
+         </view>
+   </view>
+<!-- 第四部分 -->
+   <view class="xiangmu">
+      <view class="yi">
+      <text class="yi1">冰箱管理</text>
+      </view>
+      <view class="er">
+            <view class="tou">
+            <text class="er11">扣分依据</text>
+         </view>
+            <view class="er1">（1）冰箱内存放的物品无明确标识（包括品名、使用人、日期等）。（3分）</view>
+            <view class="er1">（2）使用普通冰箱贮存危险化学品（易燃易爆品等）。（12分）</view>
+         </view>
+         <view class="san">
+                  <text class="er12">备注</text>
+                  <view class="san41">
+                     <picker bindchange="bindPickerChange41" value="{{index41}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index41]}}
+                     </view>
+                     </picker>
+                  </view>
+                  <view class="san42">
+                     <picker bindchange="bindPickerChange42" value="{{index42}}" range="{{array}}">
+                     <view class="picker">
+                     {{array[index42]}}
+                     </view>
+                     </picker>
+                  </view>
+         </view>
+   </view>
+</view>
+
+<view class="sum">
+<text class="kf">扣分合计</text>
+<!-- <text class="num">{{(index11<1?2:0)+(index12<1?2:0)+(index13<1?2:0)+(index14<1?3:0)+(index15<1?3:0)+(index16<1?12:0)+(index21<1?3:0)+(index22<1?6:0)+(index23<1?6:0)+(index24<1?12:0)+(index31<1?3:0)+(index32<1?8:0)+(index33<1?12:0)+(index41<1?3:0)+(index42<1?12:0)}}</text> -->
+<text class="num">{{sum}}</text>
+</view>
+
+
+
+
+<!-- 第六个区域：提交 -->
+<button class="mini-btn" bindtap="tijiao">提交</button>
+
+
+

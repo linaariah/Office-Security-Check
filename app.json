@@ -1,0 +1,56 @@
+{
+  "pages": [
+
+   "pages/login/login",
+    "pages/zhuce/zhuce",
+    "pages/logs/logs",
+    "pages/room/room",
+    "pages/room1/room1",
+    "pages/log/log",
+    "pages/logdetail/logdetail",
+    "pages/paihang-room/paihang-room",
+    "pages/dengji/dengji",
+    "pages/list/list",
+    "pages/fankui/fankui",
+    "pages/xiugai/xiugai",
+    "pages/xiugai2/xiugai2",
+    "pages/daoshi/daoshi"
+
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#987938",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/dengji/dengji",
+        "text": "登记",
+        "iconPath": "images/record2.jpg",
+        "selectedIconPath": "images/record1.jpg"
+      },
+      {
+        "pagePath": "pages/log/log",
+        "text": "制度",
+        "iconPath": "images/institution2.jpg",
+        "selectedIconPath": "images/institution1.jpg"
+      },
+      {
+        "pagePath": "pages/room1/room1",
+        "text": "房间",
+        "iconPath": "images/room2.jpg",
+        "selectedIconPath": "images/room1.jpg"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "排行",
+        "iconPath": "images/paihang2.png",
+        "selectedIconPath": "images/paihang1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

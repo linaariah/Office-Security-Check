@@ -1,0 +1,51 @@
+.input{
+  
+  width: 90%;
+ font-size: large;
+}
+.zhanghao{
+  margin-left: 40rpx;
+}
+.biaoyu{
+
+  margin-top: 15rpx;
+  font-size: medium;
+}
+ .ducha{
+    margin-left: 30px;
+  }
+  .tongyi{
+    margin-top: 30rpx;
+     margin-bottom: 30rpx;
+     width: 40%;
+     height: 94rpx;
+     line-height: 94rpx;
+     background-color: #987938;
+     border-radius: 47rpx;
+     color: rgb(255, 255, 255);
+     font-size: 45rpx;
+  }
+  .parentstyle {
+    display: flex;
+    align-items: center;
+    border: 1rpx solid #e0e0e0;
+    border-radius: 10rpx;
+    box-shadow: 0 0 5rpx #e0e0e0;
+    margin: 15rpx 38rpx;
+    padding: 18rpx;
+  }
+  
+  .parentstyle .imageStyle {
+    width: 41rpx;
+    height: 41rpx;
+    margin-right: 20rpx;
+  }
+  
+  .parentstyle .centerStyle {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28rpx;
+  }
+  
